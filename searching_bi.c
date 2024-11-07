@@ -2,7 +2,7 @@
 int main()
 {
     int arr[10], i, n, key;
-    int temp, mid, low, high;
+    int mid, low, high;
     
 
     printf("enter no of numbers: ");
@@ -18,31 +18,17 @@ int main()
 
     //bubble sort
 
-//    low=0;
-//    high=n-1;
-
- //   for(i=0;i<n-1;i++){
- //       for(int j=0;j<n-i-1;j++){
- //           if(arr[j]>arr[j+1]){
- //               temp = arr[j];
- //               arr[j] = arr[j+1];
- //               arr[j+1] = temp;
- //           }
- //       }
- //   }
-    
-    //selesction sort
+    low=0;
+    high=n-1;
 
     for(i=0;i<n-1;i++){
-        int pos=i; int small=arr[i];
-        for(int j=i-1;j<n;j++){
-            if(small>arr[j]){
-                pos=j;
-                small=arr[j];
+        for(int j=0;j<n-i-1;j++){
+            if(arr[j]>arr[j+1]){
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
             }
         }
-        arr[pos]=arr[i];
-        arr[i]=small;
     }
 
     printf("sorted array: ");
